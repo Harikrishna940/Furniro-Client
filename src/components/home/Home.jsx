@@ -7,7 +7,7 @@ import { Auth } from '../../context/context'
 export default function Home() {
   
   return (
-    <div className=''>
+    <div>
         <Hero/>
         <Browse/>
         <Products/>

@@ -6,6 +6,7 @@ import { MdOutlinePersonOutline } from 'react-icons/md';
 import Logo from '../assets/logo.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Auth } from '../context/context';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Nav() {
 
@@ -23,12 +24,13 @@ function Nav() {
 
   return (
     <div>
+      <div><Toaster position="bottom-right"/></div>
     <div className='flex w-screen  items-center p-4  bg-white  justify-between'>
     <div className='flex items-center cursor-pointer '>
     <img src={Logo} className='w-10'  alt="" />
       <h2 className='text-black p-2 text-3xl font-bold'>Furniro</h2></div>
       <div className='flex justify-center  font-semibold gap-15'>
-        <button className='cursor-pointer' >Home</button>
+        <button onClick={()=>toast.error("Hello World")} className='cursor-pointer' >Home</button>
         <button className='cursor-pointer'>Shop</button>
         <button className='cursor-pointer'>About</button>
         <button className='cursor-pointer'>Contact</button>
@@ -46,7 +48,7 @@ function Nav() {
       )}
 
 {auth.isAuth === false && (
-  <div>
+  <div className='pr-12 font-medium gap-9'>
     <Link to={'/register'}>
     <button>Sign Up</button>
     </Link>

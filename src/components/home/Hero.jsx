@@ -4,7 +4,7 @@ function Hero() {
   return (
 
     <div className='h-screen '>
-       <img className='w-full h-full ' src={Image} alt="" />
+       <img className='w-full h-full  ' src={Image} alt="" />
     </div>
   )
 }
